@@ -15,7 +15,7 @@ RUN apt-get update -q && \
         gd \
         bz2 ftp intl zip && \
     pecl install imagick && \
-    echo "extension=imagick.so" > /usr/local/etc/php/conf.d/imagick.ini && \
+    docker-php-ext-enable imagick && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
